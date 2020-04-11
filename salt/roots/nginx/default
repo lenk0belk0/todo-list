@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name {{ pillar['host'] }};
+    index index.php index.html;
+
+    location / {
+        root {{ pillar['app_dir'] }}/public;
+    }
+
+    charset utf8;
+}
