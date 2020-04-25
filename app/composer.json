@@ -2,10 +2,8 @@
     "name": "lenk0belk0/todo-list",
     "description": "simple todo list",
     "type": "project",
-    "require": {
-        "symfony/webpack-encore-bundle": "dev-master"
-    },
     "require-dev": {
+        "symfony/webpack-encore-bundle": "dev-master",
         "phpunit/phpunit": "^9.2@dev"
     },
     "authors": [
