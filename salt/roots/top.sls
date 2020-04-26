@@ -1,6 +1,6 @@
 base:
   '*':
-  - all
-  - php
-  - nginx
-  - init
+    - php
+    - mysql
+    - nginx
+    - nodejs

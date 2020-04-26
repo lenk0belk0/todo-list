@@ -57,3 +57,8 @@ install-composer:
     - name: mv /root/composer.phar /usr/local/bin/composer
     - watch:
       - cmd: get-composer
+
+/home/vagrant/app:
+  composer.installed:
+    - require:
+      - cmd: install-composer
