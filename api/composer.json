@@ -1,0 +1,21 @@
+{
+    "name": "lenk0belk0/todo-list",
+    "type": "project",
+    "license": "GNU GPL",
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "authors": [
+        {
+            "name": "Elena Anisimova",
+            "email": "el.n.anisimova@yandex.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-json": "^7.4",
+        "slim/psr7": "^1.0",
+        "slim/slim": "^4.5"
+    }
+}
