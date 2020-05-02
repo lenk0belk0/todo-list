@@ -3,14 +3,15 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Service\Http\JsonResponse;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Server\RequestHandlerInterface;
 
-class HomeController
+class HomeController implements RequestHandlerInterface
 {
-    public function __invoke(Request $request, Response $response, array $args): Response
+    public function handle(Request $request): Response
     {
-        $response->getBody()->write(json_encode(['hello' => 'world']));
-        return $response->withHeader('Content-type', 'application-json');
+        return new JsonResponse(['hello' => 'world']);
     }
 }
