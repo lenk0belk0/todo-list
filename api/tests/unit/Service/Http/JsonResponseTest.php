@@ -9,7 +9,7 @@ class JsonResponseTest extends TestCase
 {
     public function testReturnResponseInstance(): void
     {
-        $response = new JsonResponse(null);
+        $response = new JsonResponse();
 
         $this->assertInstanceOf(ResponseInterface::class, $response);
         $this->assertSame(200, $response->getStatusCode());
