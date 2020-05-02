@@ -4,8 +4,8 @@ declare(strict_types=1);
 $root = __DIR__ . '/../';
 require $root . 'vendor/autoload.php';
 
-$builder = new \DI\ContainerBuilder();
-$container = $builder->build();
+/** @var \Psr\Container\ContainerInterface $container */
+$container = require $root . 'config/container.php';
 
 $app = \Slim\Factory\AppFactory::createFromContainer($container);
 
