@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-$root = __DIR__ . '/../';
-require $root . 'vendor/autoload.php';
+use Psr\Container\ContainerInterface;
+use Slim\App;
 
-/** @var \Psr\Container\ContainerInterface $container */
-$container = require $root . 'config/container.php';
+require __DIR__ . '/../vendor/autoload.php';
 
-$app = \Slim\Factory\AppFactory::createFromContainer($container);
+/** @var ContainerInterface $container */
+$container = require __DIR__ . '/../config/container.php';
 
-(require $root . 'config/middleware.php')($app, $container);
-(require $root . 'config/routes.php')($app);
+/** @var App $app */
+$app = (require __DIR__ . '/../config/app.php')($container);
 
 $app->run();
