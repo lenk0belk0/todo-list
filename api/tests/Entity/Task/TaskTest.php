@@ -10,7 +10,7 @@ use Ramsey\Uuid\Uuid;
 
 class TaskTest extends TestCase
 {
-    public function testRequireShortName(): void
+    public function testRequireNotEmptyShortName(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         new Task(Id::generate(), '');
