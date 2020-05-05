@@ -16,7 +16,7 @@ class TaskTest extends TestCase
         new Task(Id::generate(), '');
     }
 
-    public function testCreateWithValidValues(): void
+    public function testCreateWithValidValues(): Task
     {
         $uuid = Uuid::uuid4()->toString();
         $text1 = 'qwerty';
@@ -27,5 +27,33 @@ class TaskTest extends TestCase
         $this->assertSame($text1, $task->getShortDescription());
         $this->assertSame($text2, $task->getLongDescription());
         $this->assertNotEmpty($task->getCreatedAt());
+
+        return $task;
+    }
+
+    /**
+     * @depends testCreateWithValidValues
+     */
+    public function testSetDescriptions(Task $task): void
+    {
+        $newShortDescription = 'new text';
+        $newLongDescription = 'new long text';
+
+        $task
+            ->setShortDescription($newShortDescription)
+            ->setLongDescription($newLongDescription)
+        ;
+
+        $this->assertSame($newShortDescription, $task->getShortDescription());
+        $this->assertSame($newLongDescription, $task->getLongDescription());
+    }
+
+    /**
+     * @depends testCreateWithValidValues
+     */
+    public function testRequireValidValueToSetShortDescription(Task $task): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $task->setShortDescription('');
     }
 }

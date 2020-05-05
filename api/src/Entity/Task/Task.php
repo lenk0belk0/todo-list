@@ -14,12 +14,10 @@ class Task
 
     public function __construct(Id $id, string $shortDescription, ?string $longDescription = null)
     {
-        Assert::notEmpty($shortDescription);
+        $this->setShortDescription($shortDescription);
+        $this->setLongDescription($longDescription);
 
         $this->id = $id->getValue();
-        $this->shortDescription = $shortDescription;
-        $this->longDescription = $longDescription;
-
         $this->createdAt = new \DateTime();
     }
 
@@ -41,5 +39,21 @@ class Task
     public function getCreatedAt(): \DateTime
     {
         return $this->createdAt;
+    }
+
+    public function setShortDescription(string $shortDescription): self
+    {
+        Assert::notEmpty($shortDescription);
+
+        $this->shortDescription = $shortDescription;
+
+        return $this;
+    }
+
+    public function setLongDescription(?string $longDescription): ?self
+    {
+        $this->longDescription = $longDescription;
+
+        return $this;
     }
 }
