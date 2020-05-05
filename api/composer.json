@@ -19,6 +19,7 @@
         "ramsey/uuid": "^4.0",
         "slim/psr7": "^1.0",
         "slim/slim": "^4.5",
+        "symfony/console": "^5.0",
         "webmozart/assert": "^1.8"
     }
     ,
