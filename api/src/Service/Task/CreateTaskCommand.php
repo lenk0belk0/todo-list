@@ -5,12 +5,12 @@ namespace App\Service\Task;
 
 class CreateTaskCommand
 {
-    public string $shortDescription;
-    public string $longDescription;
+    public ?string $shortDescription;
+    public ?string $longDescription;
 
     public function __construct()
     {
-        $this->shortDescription = '';
-        $this->longDescription = '';
+        $this->shortDescription = null;
+        $this->longDescription = null;
     }
 }

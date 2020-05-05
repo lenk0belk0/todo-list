@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Tests\Service\Task;
 
@@ -17,8 +18,8 @@ class CreateTaskCommandTest extends TestCase
     {
         $command = new CreateTaskCommand();
 
-        $this->assertSame('', $command->shortDescription);
-        $this->assertSame('', $command->longDescription);
+        $this->assertNull($command->shortDescription);
+        $this->assertNull($command->longDescription);
     }
 
     public function testSetValuesToCommand(): void
