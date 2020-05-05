@@ -26,5 +26,6 @@ class TaskTest extends TestCase
         $this->assertSame($uuid, $task->getId());
         $this->assertSame($text1, $task->getShortDescription());
         $this->assertSame($text2, $task->getLongDescription());
+        $this->assertNotEmpty($task->getCreatedAt());
     }
 }

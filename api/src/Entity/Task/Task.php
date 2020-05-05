@@ -10,6 +10,7 @@ class Task
     private string $id;
     private string $shortDescription;
     private ?string $longDescription;
+    private \DateTime $createdAt;
 
     public function __construct(Id $id, string $shortDescription, ?string $longDescription = null)
     {
@@ -18,6 +19,8 @@ class Task
         $this->id = $id->getValue();
         $this->shortDescription = $shortDescription;
         $this->longDescription = $longDescription;
+
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): string
@@ -33,5 +36,10 @@ class Task
     public function getLongDescription(): string
     {
         return $this->longDescription;
+    }
+
+    public function getCreatedAt(): \DateTime
+    {
+        return $this->createdAt;
     }
 }
