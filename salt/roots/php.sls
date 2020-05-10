@@ -64,7 +64,14 @@ install-composer:
     - watch:
       - cmd: get-composer
 
-/home/vagrant/api:
+/vagrant/api:
   composer.installed:
     - require:
       - cmd: install-composer
+
+/vagrant/api/.env:
+  file.managed:
+    - source: salt://php/.env
+    - template: jinja
+    - mode: 755
+
