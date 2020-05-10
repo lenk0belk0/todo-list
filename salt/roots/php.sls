@@ -41,6 +41,12 @@ php-curl:
     - require:
       - pkg: php
 
+php-zip:
+  pkg:
+    - installed
+    - require:
+      - pkg: php
+
 php-xdebug:
   pkg:
     - installed
