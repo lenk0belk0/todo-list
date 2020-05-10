@@ -21,6 +21,7 @@
         "slim/psr7": "^1.0",
         "slim/slim": "^4.5",
         "symfony/console": "^5.0",
+        "vlucas/phpdotenv": "^4.1",
         "webmozart/assert": "^1.8"
     },
     "require-dev": {
