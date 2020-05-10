@@ -1,4 +1,5 @@
 base:
   '*':
+    - shared
     - php
     - nginx
